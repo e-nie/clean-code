@@ -1,6 +1,6 @@
 package practice_2.structural.decorator.after;
 
-class SimpleCoffee implements Sellable {
+public class SimpleCoffee implements Coffee {
     @Override
     public double cost() {
         return 1.0;

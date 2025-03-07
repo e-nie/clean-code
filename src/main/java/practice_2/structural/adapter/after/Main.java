@@ -5,8 +5,8 @@ public class Main {
         FahrenheitThermometer fThermometer = new FahrenheitThermometer();
         WeatherApp app = new WeatherApp();
 
-        CelsiusAdapter celsiusAdapter = new CelsiusAdapter(fThermometer);
+        CelsuisAdapter celsuisAdapter = new CelsuisAdapter(fThermometer);
 
-        app.printTemperature(celsiusAdapter.getTemperature()); // Неудобно и повторяющееся преобразование
+        app.printTemperature(celsuisAdapter.getCelsuis()); // Неудобно и повторяющееся преобразование
     }
 }

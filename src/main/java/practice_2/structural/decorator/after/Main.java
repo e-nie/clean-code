@@ -2,24 +2,49 @@ package practice_2.structural.decorator.after;
 
 public class Main {
     public static void main(String[] args) {
-        // было просто кофе
-        Sellable coffee = new SimpleCoffee();
+        /*
+        Идея решения:
 
-        System.out.println(coffee.cost());
+        Давайте сделаем: простой кофе
 
-        // на основе просто кофе построили просто кофе + молоко
+        И реализуем декораторы (слои для добавления к кофе):
+        Декоратор молока
+        Декоратор сахара
+
+        Использование:
+        1) цель: сделать кофе с молоком
+
+        беру простой кофе
+        декорирую (добавление нового слой) простой кофе молоком -> кофе с молоком
+
+        2) цель: сделать кофе с сахаром
+
+        беру простой кофе
+        декорирую (добавление нового слой) простой кофе сахаром -> кофе с сахаром
+
+        3) цель: кофе с молоком и сахаром
+
+        беру простой кофе
+        декорирую простой кофе молоком -> кофе с молоком
+        декорирую простой кофе с молоком сахаром -> кофе с молоком и сахаром
+
+         */
+
+
+        //  1) цель: сделать кофе с молоком
+        Coffee coffee = new SimpleCoffee();
         coffee = new MilkDecorator(coffee);
-
         System.out.println(coffee.cost());
 
-        // на основе просто кофе + молоко построили просто кофе + молоко + сахар
-        coffee = new SugarDecorator(coffee);
+        // 2) цель: сделать кофе с сахаром
+        Coffee coffeeWithSugar = new SimpleCoffee();
+        coffeeWithSugar = new SugarDecorator(coffeeWithSugar);
+        System.out.println(coffeeWithSugar.cost());
 
-        System.out.println(coffee.cost());
-
-        // на основе просто кофе + молоко + сахар построили просто кофе + молоко + сахар + молоко
-        coffee = new MilkDecorator(coffee);
-
-        System.out.println(coffee.cost());
+        // 3) цель: кофе с молоком и сахаром
+        Coffee coffeeWithSugarAndMilk = new SimpleCoffee(); // простой кофе
+        coffeeWithSugarAndMilk = new SugarDecorator(coffeeWithSugarAndMilk); // простой кофе + сахар
+        coffeeWithSugarAndMilk = new MilkDecorator(coffeeWithSugarAndMilk); // простой кофе + сахар + молоко
+        System.out.println(coffeeWithSugarAndMilk.cost());
     }
 }

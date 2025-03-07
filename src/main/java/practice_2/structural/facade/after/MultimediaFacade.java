@@ -1,18 +1,21 @@
 package practice_2.structural.facade.after;
 
+/**
+ * Фасад для сложной обработки файла
+ */
 public class MultimediaFacade {
-    private AudioMixer audioMixer;
-    private CodecConverter codecConverter;
     private VideoFile videoFile;
+    private CodecConverter codecConverter;
+    private AudioMixer audioMixer;
 
-    public MultimediaFacade(AudioMixer audioMixer, CodecConverter codecConverter, VideoFile videoFile) {
-        this.audioMixer = audioMixer;
-        this.codecConverter = codecConverter;
+    public MultimediaFacade(VideoFile videoFile, CodecConverter codecConverter, AudioMixer audioMixer) {
         this.videoFile = videoFile;
+        this.codecConverter = codecConverter;
+        this.audioMixer = audioMixer;
     }
 
-    // этот метод является точкой доступа или фасадом к сложной логике обработки данных
-    public void prepareMedia() {
+    // алгоритм обработки видео
+    public void prepareData() {
         videoFile.load();
         codecConverter.convert(videoFile.fileName);
         audioMixer.fixAudio();

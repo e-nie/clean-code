@@ -6,9 +6,13 @@ public class Main {
         CodecConverter codecConverter = new CodecConverter();
         AudioMixer audioMixer = new AudioMixer();
 
-        MultimediaFacade multimediaFacade = new MultimediaFacade(audioMixer, codecConverter, videoFile);
-        multimediaFacade.prepareMedia();
+        MultimediaFacade multimediaFacade = new MultimediaFacade(videoFile, codecConverter, audioMixer);
+        multimediaFacade.prepareData();
 
-        multimediaFacade.prepareMedia();
+        /*
+
+         */
+
+        multimediaFacade.prepareData();
     }
 }

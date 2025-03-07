@@ -1,9 +1,7 @@
 package practice_2.structural.decorator.after;
 
 public class MilkDecorator extends CoffeeDecorator {
-    // на основе кофе с сахаром построй все то же самое + молоко
-    // на основе кофе с молоком построй все то же самое + молоко
-    public MilkDecorator(Sellable coffee) {
+    public MilkDecorator(Coffee coffee) {
         super(coffee);
     }
 

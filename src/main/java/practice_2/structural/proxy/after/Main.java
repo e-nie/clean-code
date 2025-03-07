@@ -2,17 +2,21 @@ package practice_2.structural.proxy.after;
 
 public class Main {
     public static void main(String[] args) {
-        // при создании imageProxy не происходит загрузка изображения
+        // в момент создания прокси изображение не загружается
         ImageProxy imageProxy = new ImageProxy("path/to/high/res/image");
 
-        // загрузка изображения происходит в момент вызова showImage
-        imageProxy.showImage();
+        /*
+        много времени
+         */
 
-        // какой-то код
-        // какой-то код
-        // какой-то код
+        // отображения изображение
+        imageProxy.show();
 
-        // загрузка не повторяется
-        imageProxy.showImage();
+        /*
+         много времени
+         */
+
+        // отображение не загрузится повторно
+        imageProxy.show();
     }
 }

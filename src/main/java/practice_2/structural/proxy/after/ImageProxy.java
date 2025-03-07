@@ -1,22 +1,21 @@
 package practice_2.structural.proxy.after;
 
-public class ImageProxy implements  Showable {
-    private String imageFilePath;
+public class ImageProxy implements Showable {
     private HighResolutionImage image;
+    private String imageFilePath;
 
-    // в конструкторе мы НЕ загружаем изображение
+    // при создании прокси изображения мы не загружаем само изображение
     public ImageProxy(String imageFilePath) {
         this.imageFilePath = imageFilePath;
     }
 
-    // ЛЕНИВАЯ ЗАГРУЗКА
-    // загрузка изображения происходит во время запроса на отображение изображения
+    // ленивая загрузка - только в момент явного вызова метода show
     @Override
-    public void showImage() {
+    public void show() {
+        // произвести загрузку изображения только 1 раз
         if (this.image == null) {
-            // здесь происходит загрузка изображения
-            this.image = new HighResolutionImage(this.imageFilePath);
+            this.image = new HighResolutionImage(imageFilePath);
         }
-        this.image.showImage();
+        image.showImage();
     }
 }
