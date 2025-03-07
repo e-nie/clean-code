@@ -7,11 +7,13 @@ public class Main {
         Document copy = original.clone();
 
         copy.text = "Copy";
+
         System.out.println("Original Document: " + original.text);
         System.out.println("Copied Document: " + copy.text);
         // Проблема с копированием массива, т.к. изменения в копии затронут оригинал
 
         copy.images[1] = "Updated"; // изменила второе изображении в копии
+
         System.out.println("Original Document: image 1 " + original.images[0]
                 + " image 2 " + original.images[1]);
         System.out.println("Copied Document: image 1 " + copy.images[0]

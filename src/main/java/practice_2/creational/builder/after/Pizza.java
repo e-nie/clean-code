@@ -5,19 +5,44 @@ class Pizza {
     private String sauce;
     private String topping;
 
+    public Pizza(String dough, String sauce, String topping) {
+        this.dough = dough;
+        this.sauce = sauce;
+        this.topping = topping;
+    }
+
+    public Pizza(Builder builder) {
+        this.dough = builder.dough;
+        this.sauce = builder.sauce;
+        this.topping = builder.topping;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza with " + dough + " dough, " + sauce + " sauce, " + topping + " topping.";
+    }
+
     static class Builder {
         private String dough;
         private String sauce;
         private String topping;
 
-        // Нам нужны не просто сеттеры, а возможность цепочки вызовов
+        /*
+        Если вы используется классические сеттеры, то:
 
-        // pizza.setDough()
-        // pizza.setSauce()
+        Pizza pizza = new Pizza.Builder();
+        pizza.setDough();
+        pizza.setSauce();
+        pizza.setTopping();
 
-        // перейти к цепочке вызовов
+        Использовать цепочку вызовов:
 
-        // Pizza.Builder().setDough().setSauce()
+        new Pizza.Builder() // возвращался тип данных Builder
+           .setDough() // возвращался тип данных Builder
+           .setSauce() // возвращался тип данных Builder
+           .setTopping(); // возвращался тип данных Builder
+
+         */
 
         public Builder setDough(String dough) {
             this.dough = dough;
@@ -37,23 +62,6 @@ class Pizza {
         public Pizza build() {
             return new Pizza(this);
         }
-    }
-
-    public Pizza(Builder builder) {
-        this.dough = builder.dough;
-        this.sauce = builder.sauce;
-        this.topping = builder.topping;
-    }
-
-    public Pizza(String dough, String sauce, String topping) {
-        this.dough = dough;
-        this.sauce = sauce;
-        this.topping = topping;
-    }
-
-    @Override
-    public String toString() {
-        return "Pizza with " + dough + " dough, " + sauce + " sauce, " + topping + " topping.";
     }
 }
 

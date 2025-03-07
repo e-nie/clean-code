@@ -2,6 +2,7 @@ package practice_2.creational.singleton.after;
 
 public class Main {
     public static void main(String[] args) {
+        // нет возможность вызвать конструктор
         DatabaseConfig config1 = DatabaseConfig.getInstance();
         DatabaseConfig config2 = DatabaseConfig.getInstance();
 

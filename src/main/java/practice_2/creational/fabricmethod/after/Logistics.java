@@ -1,13 +1,14 @@
 package practice_2.creational.fabricmethod.after;
 
 /**
- * Класс для управления разными типами доставки.
+ * Класс для управления логистикой доставок
  */
 public abstract class Logistics {
-    // фабричный метод, которому мы делегируем создание транспорта
+    // фабричным методом
+    // метод реализует способ создания транспорта
     abstract Transport createTransport();
 
-    void planLogistic() {
+    public void planDeleivery() {
         Transport transport = createTransport();
         transport.deliver();
     }

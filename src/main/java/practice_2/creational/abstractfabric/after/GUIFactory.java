@@ -1,6 +1,7 @@
 package practice_2.creational.abstractfabric.after;
 
+// абстрактная фабрика
 public interface GUIFactory {
-    Button createButton();
-    Checkbox createCheckbox();
+    Button createButton(); // фабричный метод
+    Checkbox createCheckbox(); // фабричный метод
 }

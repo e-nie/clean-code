@@ -10,6 +10,8 @@ class Document {
     }
 
     public Document clone() {
+        // поверхностное копирование изображения приводит к тому, что при изменении
+        // копии, меняется оригинал
         return new Document(this.text, this.images); // Проблемы с глубоким копированием
     }
 }

@@ -7,11 +7,11 @@ public class Main {
         String osType = "Windows";
 
         if ("Windows".equals(osType)) {
-            button = new WindowsButton();
-            checkbox = new WindowsCheckbox();
+            button = new WindowsButton(); // фабричный метод
+            checkbox = new WindowsCheckbox(); // фабричный метод
         } else {
-            button = new MacOSButton();
-            checkbox = new MacOSCheckbox();
+            button = new MacOSButton(); // фабричный метод
+            checkbox = new MacOSCheckbox(); // фабричный метод
         }
 
         button.paint();

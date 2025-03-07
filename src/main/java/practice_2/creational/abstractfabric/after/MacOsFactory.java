@@ -1,6 +1,6 @@
 package practice_2.creational.abstractfabric.after;
 
-public class MacFactory implements GUIFactory{
+public class MacOsFactory implements GUIFactory {
     @Override
     public Button createButton() {
         return new MacOSButton();

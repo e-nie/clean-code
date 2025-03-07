@@ -1,19 +1,23 @@
 package practice_2.creational.singleton.after;
 
-/*
- * Давайте преобразуем DatabaseConfig в одиночку, применив паттерн синглтон.
- */
+// Задача: трансформировать DatabaseConfig в единственный экземпляр конфига в программа
+// с помощью паттерна одиночка
 public class DatabaseConfig {
     public String config = "Default Config";
-    private static DatabaseConfig instance;
+    // единственный экземпляр DatabaseConfig
+    private static DatabaseConfig databaseConfig;
 
-    private DatabaseConfig() {}
+    // закрыли возможность вызывать конструктор
+    private DatabaseConfig() {
 
+    }
+
+    // создание единственного экземпляра DatabaseConfig
     public static DatabaseConfig getInstance() {
-        if (instance == null) {
-            instance = new DatabaseConfig();
+        if (databaseConfig == null) {
+            databaseConfig = new DatabaseConfig();
         }
-        return instance;
+        return databaseConfig;
     }
 
     public void displayConfig() {
