@@ -8,6 +8,7 @@ class Navigator {
     }
 
     public void buildRoute() {
+        // модифицируемым, не расширяемым
         if (strategy.equals("fastest")) {
             System.out.println("Building the fastest route.");
         } else if (strategy.equals("economical")) {
