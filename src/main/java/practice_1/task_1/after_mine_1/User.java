@@ -1,4 +1,4 @@
-package practice_1.task_1.after_mine;
+package practice_1.task_1.after_mine_1;
 
 class User {
     private String username;

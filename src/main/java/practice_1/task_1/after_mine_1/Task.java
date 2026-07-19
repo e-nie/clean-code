@@ -1,8 +1,8 @@
-package practice_1.task_1.after_mine;
+package practice_1.task_1.after_mine_1;
 
 import java.util.Date;
 
-public class Task {
+ class Task {
     private String title;
     private String description;
     private Date dueDate;

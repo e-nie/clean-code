@@ -1,4 +1,4 @@
-package practice_1.task_1.after_mine;
+package practice_1.task_1.after_mine_1;
 
 import java.util.ArrayList;
 import java.util.Date;
