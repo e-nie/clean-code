@@ -8,9 +8,15 @@ public class Main {
         DatabaseConfig config2 = DatabaseConfig.getInstance();
 
         config1.config = "DB Config for User A";
-        config2.config = "DB Config for User B";
 
         config1.displayConfig(); // Выводит "DB Config for User A"
+
+        config2.config = "DB Config for User B";
+        config2.displayConfig(); // Выводит "DB Config for User B"
+
+        System.out.println();
+
+        config1.displayConfig(); // Выводит "DB Config for User B"
         config2.displayConfig(); // Выводит "DB Config for User B"
     }
 }
